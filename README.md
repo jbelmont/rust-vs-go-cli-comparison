@@ -1,2 +1,3 @@
-# rust-vs-go-cli-comparison
-A repository exploring differences in building Go and Rust clis
+# Rust vs Golang cli comparison
+
+A repository exploring differences in building Go and Rust clis.

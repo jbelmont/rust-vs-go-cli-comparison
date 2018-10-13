@@ -1,0 +1,8 @@
+[package]
+name = "cli_with_clap"
+version = "0.1.0"
+authors = ["Jean-Marcel Belmont <marcelbelmont@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "2.32.0"

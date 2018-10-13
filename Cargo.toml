@@ -2,4 +2,6 @@
 
 members = [
     "summation",
+    "http_request_with_hyper",
+    "http_request_with_reqwest",
 ]

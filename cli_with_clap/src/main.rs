@@ -55,28 +55,65 @@ fn main() {
     }
 
     // You can also match on a subcommand's name
+    let mut value = 0.0;
     match matches.subcommand() {
         ("add", Some(add_matches)) =>{
             // Now we have a reference to add's matches
-            let numbers = add_matches.values_of("numbers").unwrap().collect::<Vec<_>>().join(", ");
-            println!("numbers is {}", numbers);
+            let mut sum = 0.0;
+            let numbers = add_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
+            for num in numbers.iter() {
+                if *num == String::from("number") {
+                    continue
+                } else {
+                    sum += num.parse::<f32>().unwrap();
+                }
+            }
+            value = sum;
         },
         ("subtract", Some(subtract_matches)) =>{
             // Now we have a reference to add's matches
-            let numbers = subtract_matches.values_of("numbers").unwrap().collect::<Vec<_>>().join(", ");
-            println!("numbers is {}", numbers);
+            let numbers = subtract_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
+            let mut subtrahend = 0.0;
+            for num in numbers.iter() {
+                if *num == String::from("number") {
+                    continue
+                } else {
+                    subtrahend -= num.parse::<f32>().unwrap();
+                }
+            }
+            value = subtrahend;
         },
         ("multiply", Some(multiply_matches)) =>{
             // Now we have a reference to add's matches
-            let numbers = multiply_matches.values_of("numbers").unwrap().collect::<Vec<_>>().join(", ");
-            println!("numbers is {}", numbers);
+            let numbers = multiply_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
+            let mut product = 1.0;
+            for num in numbers.iter() {
+                if *num == String::from("number") {
+                    continue
+                } else {
+                    product *= num.parse::<f32>().unwrap();
+                }
+            }
+            value = product;
         },
         ("divide", Some(divide_matches)) =>{
             // Now we have a reference to add's matches
-            let numbers = divide_matches.values_of("numbers").unwrap().collect::<Vec<_>>().join(", ");
-            println!("numbers is {}", numbers);
+            let numbers = divide_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
+            let mut dividend = 1.0;
+            for num in numbers.iter() {
+                if *num == String::from("number") {
+                    continue
+                } else {
+                    if num.parse::<i32>().unwrap() == 0 {
+                        continue
+                    }
+                    dividend /= num.parse::<f32>().unwrap();
+                }
+            }
+            value = dividend;
         }
         ("", None)   => println!("No subcommand was used"),
         _            => unreachable!(),
     }
+    println!("The calculation is {}", value);
 }

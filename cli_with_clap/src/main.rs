@@ -41,19 +41,6 @@ fn main() {
                 .required(true)))
         .get_matches();
 
-    // You can check if a subcommand was used like normal
-    if matches.is_present("add") {
-        println!("'calculator add' was run.");
-    } else if matches.is_present("subtract") {
-        println!("'calculator subtract' was run.");
-    } else if matches.is_present("multiply") {
-        println!("'calculator multiply' was run.");
-    } else if matches.is_present("divide") {
-        println!("'calculator divide' was run.");
-    } else {
-        println!("no subcommand was used");
-    }
-
     // You can also match on a subcommand's name
     let mut value = 0.0;
     match matches.subcommand() {

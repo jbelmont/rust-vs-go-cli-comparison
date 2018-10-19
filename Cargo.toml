@@ -1,9 +1,10 @@
 [workspace]
 
 members = [
-    "summation",
-    "summation_with_tests",
-    "http_request_with_reqwest",
+    "ascii-chart",
     "cli_calculator_with_clap",
     "cli_decoder_with_rust",
+    "http_request_with_reqwest",
+    "summation",
+    "summation_with_tests",
 ]

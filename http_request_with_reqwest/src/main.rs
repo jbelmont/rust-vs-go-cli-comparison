@@ -6,6 +6,9 @@ use std::process;
 use std::env;
 
 
+// `Result` is a type that represents either success ([`Ok`]) or failure ([`Err`])
+// `Box` A pointer type for heap allocation.
+// `Error` is a trait representing the basic expectations for error values
 fn run() -> Result<(), Box<dyn Error>> {
     let travis_token = env::var("TRAVIS_PERSONAL_TOKEN").unwrap().to_string();
     let client = reqwest::Client::builder()

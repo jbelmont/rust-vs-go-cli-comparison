@@ -1,5 +1,3 @@
-use std::iter;
-
 fn main() {
     let ascii_table = vec![
         '!',

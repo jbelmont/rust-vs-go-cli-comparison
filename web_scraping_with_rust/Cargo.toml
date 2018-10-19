@@ -1,0 +1,10 @@
+[package]
+name = "web_scraping_with_rust"
+version = "0.1.0"
+authors = ["Jean-Marcel Belmont <marcelbelmont@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9.3"
+select = "0.4.2"
+prettytable-rs = "0.8.0"

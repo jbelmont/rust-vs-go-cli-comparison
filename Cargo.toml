@@ -7,4 +7,5 @@ members = [
     "http_request_with_reqwest",
     "summation",
     "summation_with_tests",
+    "web_scraping_with_rust",
 ]

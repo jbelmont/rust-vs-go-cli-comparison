@@ -5,5 +5,5 @@ members = [
     "summation_with_tests",
     "http_request_with_reqwest",
     "cli_calculator_with_clap",
-    "jwt-decoder",
+    "cli_decoder_with_rust",
 ]

@@ -1,0 +1,7 @@
+[package]
+name = "printing_values_to_stdout_with_rust"
+version = "0.1.0"
+authors = ["Jean-Marcel Belmont <marcelbelmont@gmail.com>"]
+edition = "2018"
+
+[dependencies]

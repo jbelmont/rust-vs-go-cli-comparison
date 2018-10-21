@@ -8,4 +8,5 @@ members = [
     "summation",
     "summation_with_tests",
     "web_scraping_with_rust",
+    "printing_values_to_stdout_with_rust",
 ]

@@ -2,6 +2,7 @@
 
 members = [
     "ascii-chart",
+    "average",
     "cli_calculator_with_clap",
     "cli_decoder_with_rust",
     "http_request_with_reqwest",

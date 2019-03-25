@@ -83,8 +83,8 @@ fn main() {
         }
     };
     // Serialize it to a JSON string.
-    let serialize_jwt = serde_json::to_string(&token).unwrap();
+    let serialize_jwt = serde_json::to_string_pretty(&token).unwrap();
 
     // Print, write to a file, or send to an HTTP server.
-    println!("{:?}", serialize_jwt);
+    println!("{}", serialize_jwt);
 }

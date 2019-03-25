@@ -7,8 +7,3 @@ void printAscii() {
             fprintf(stdout, "%c\n", i);
     }
 }
-
-int main(void) {
-    printAscii();
-    return 0;
-}

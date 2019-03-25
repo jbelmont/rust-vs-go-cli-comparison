@@ -1,4 +1,13 @@
+extern "C" {
+    fn printAscii();
+}
+
 fn main() {
+
+    unsafe {
+        printAscii();
+    }
+
     let ascii_table = vec![
         '!',
         '"',

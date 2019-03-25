@@ -39,12 +39,21 @@ fn main() {
                 .help("the numbers to divide")
                 .index(1)
                 .required(true)))
+        .subcommand(SubCommand::with_name("remainder")
+            .about("Remainder between 2 numbers")
+            .version("0.2")
+            .author("Jean-Marcel Belmont")
+            .arg(Arg::with_name("numbers")
+                .multiple(true)
+                .help("the numbers to find remainder of")
+                .index(1)
+                .required(true)))
         .get_matches();
 
     // You can also match on a subcommand's name
     let mut value = 0.0;
     match matches.subcommand() {
-        ("add", Some(add_matches)) =>{
+        ("add", Some(add_matches)) => {
             // Now we have a reference to add's matches
             let mut sum = 0.0;
             let numbers = add_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
@@ -57,7 +66,7 @@ fn main() {
             }
             value = sum;
         },
-        ("subtract", Some(subtract_matches)) =>{
+        ("subtract", Some(subtract_matches)) => {
             // Now we have a reference to add's matches
             let numbers = subtract_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
             let mut subtrahend = 0.0;
@@ -70,7 +79,7 @@ fn main() {
             }
             value = subtrahend;
         },
-        ("multiply", Some(multiply_matches)) =>{
+        ("multiply", Some(multiply_matches)) => {
             // Now we have a reference to add's matches
             let numbers = multiply_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
             let mut product = 1.0;
@@ -83,7 +92,7 @@ fn main() {
             }
             value = product;
         },
-        ("divide", Some(divide_matches)) =>{
+        ("divide", Some(divide_matches)) => {
             // Now we have a reference to add's matches
             let numbers = divide_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
             let mut dividend = 1.0;
@@ -98,7 +107,15 @@ fn main() {
                 }
             }
             value = dividend;
-        }
+        },
+        ("remainder", Some(remainder_matches)) => {
+            // Now we have a reference to add's matches
+            let numbers = remainder_matches.values_of("numbers").unwrap().collect::<Vec<_>>();
+            let quotient = numbers[0].parse::<i32>().unwrap();
+            let divisor = numbers[1].parse::<i32>().unwrap();
+            let remainder = quotient % divisor;
+            value = remainder as f32;
+        },
         ("", None)   => println!("No subcommand was used"),
         _            => unreachable!(),
     }

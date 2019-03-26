@@ -13,6 +13,14 @@ pub fn summation_with_fold(numbers: Vec<f32>) -> f32 {
     return sum;
 }
 
+pub fn average(numbers: Vec<f32>) -> f32 {
+    let mut sum = 0.0;
+    for num in numbers.iter() {
+        sum += num;
+    }
+    sum as f32 / numbers.len() as f32
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -41,5 +49,17 @@ mod tests {
             summation_with_fold(numbers),
             16.5
         );
+    }
+
+    #[test]
+    fn should_compute_the_average() {
+        let numbers: Vec<f32> = vec![
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+        ];
+        assert_eq!(average(numbers), 3.0);
     }
 }

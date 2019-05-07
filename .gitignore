@@ -33,4 +33,7 @@ Cargo.lock
 # Vscode related files
 .vscode/
 
+# scripts used in repo only not pertinent
+.scripts
+
 # End of https://www.gitignore.io/api/go,rust
